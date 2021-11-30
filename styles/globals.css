@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #F4F4F5;
+}
+
+::selection {
+    color: #FFFFFF;
+    background: #ED1A33;
+}
+
+::moz-selection {
+    color: #FFFFFF;
+    background: #ED1A33;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container-sm,
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1320px;
+    }
+}
+
+.blog-list-container {
+    margin: 5rem 0;
+}
+
+.blog-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image img{
+    width: 280px;
+    transition: all .5s;
+}
+
+.blog-list {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+    border-radius: 0.25rem;
+}
+
+.blog-list {
+    display: flex;
+}
+
+.blog-img-container {
+    box-sizing: border-box;
+    height: 175px;
+    border-radius: 0.125rem 0.125rem 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-img-container::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 74px;
+    height: 43px;
+    background-color: #FFFFFF;
+    /*background-color: red;*/
+    z-index: 55;
+    bottom: -10px;
+    right: -28px;
+    transform: rotate(-45deg);
+}
+
+.blog-img-container:hover img {
+    transform: scale(1.05);
+    object-fit: cover;
+}
+
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 17.5rem);
+    padding: 0 0 0 1rem;
+    position: relative;
+    justify-content: space-between;
+}
+
+.heading-color {
+    color: #292929;
+    font-size: 20px;
+    margin: 0;
+}
+
+.heading-color:hover {
+    color: #ED1A33;
+}
+
+.paragraph-color {
+    color: #525252;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 26px;
+    margin-right: 20px;
+    font-weight: 400;
+}
+
+.author-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-info__left, .author-info__right {
+    display: flex;
+    align-items: center;
+}
+
+.author-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2990f8;
+    transition: all 0.5s;
+    margin-right: 6px;
+}
+.author-name:hover {
+    color: #22336F;
+}
+
+.post-created-at {
+    color: #A3A3A3;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.comment {
+    margin-right: 15px;
+}
+
+.comment, .seen {
+    font-weight: 500;
+}
+
+.load-more-container {
+    text-align: center;
+}
+
+.load-more {
+    display: inline-block;
+    padding: 12px 60px 12px 16px;
+    background: #ed1a33;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff!important;
+    font-family: Muli,sans-serif;
+    font-weight: 700;
+    border: none;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.load-more::before {
+    content: "\279D";
+    position: absolute;
+    display: block;
+    width: 65px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+    z-index: 1;
+    /*background: url(https://www.sports.info/right-arrow.318a2f1f7fc52ec4ef47.svg) center center/14px auto no-repeat;*/
+    transition: all .3s ease-in-out;
+    transform: rotate(90deg);
+}
+.load-more::after {
+    content: "\279D";
+    position: absolute;
+    display: block;
+    width: 65px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    /*background: url(https://www.sports.info/right-arrow.318a2f1f7fc52ec4ef47.svg) center center/14px auto no-repeat;*/
+    transition: all .3s ease-in-out;
+    transform: rotate(90deg);
+}
+.load-more:hover::after {
+    top: 100%;
+}
+.load-more:hover::before {
+    top: 0;
+}
+.load-more span {
+    position: absolute;
+    display: block;
+    background: #b80e23;
+    width: 44px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* ===== PAGE SPECIFIC CSS ===== */
+.banner {
+    display: flex;
+    align-items: flex-end;
+    /* background-image: url('https://image.crictracker.com/wp-content/uploads/2020/09/AB-de-Villiers-1.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 670px;
+    margin-top: -6px;
+    box-shadow: inset  0 -335px 335px -150px #1b2a5a;
+    /*box-shadow: inset  0 -30px 15px -30px #1b2a5a, inset  0 -60px 30px -60px #1b2a5a,
+                inset 0 -120px 60px -120px #1b2a5a, inset  0 -240px 120px -240px #1b2a5a,
+                inset 0 -480px 240px -480px #1b2a5a, inset  0 -960px 480px -960px #1b2a5a,
+                inset 0 -1920px 480px -1920px #1b2a5a, inset  0 -3840px 1920px -3840px #1b2a5a,
+                inset 0 -7680px 3840px -7680px #1b2a5a, inset  0 -15360px 7680px -15360px #1b2a5a;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-footer {
+    max-width: 67%;
+    margin-bottom: 20px;
+}
+
+.blog-title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    font-style: italic;
+    color: #FFFFFF;
+    font-weight: 900;
+    line-height: 64px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.blog-author-info {
+    display: flex;
+    justify-content: space-between;
+}
+.blog-author-info__left, .blog-author-info__right {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+.author-info-footer {
+    display: flex;
+    max-width: 60%;
+    margin: 30px 0;
+}
+
+.author-info-footer__img-container {
+    border-radius:50px;
+    overflow: hidden;
+    min-width: 96px !important;
+    min-height: 96px !important;
+    max-width: 96px !important;
+    max-height: 96px !important;
+    width: 96px !important;
+    height: 96px !important;
+    background: red;
+    margin-right: 20px;
+}
+
+.author-info-footer__img-container img{
+    width: inherit;
+    height: inherit;
+    object-fit: fill;
+}
+
+.content-top__author-name h5{
+    margin: 0;
+    padding: 0;
+}
+.content-top__author-name h5 a{
+    color: #292929;
+    transition: all .3s;
+    font-size: 16px;
+}
+.content-top__author-name a:hover{
+    color: #ED1A33;
+}
+.content-bottom__author-description p {
+    color: #525252;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.source {
+    color: #ED1A33;
+}
